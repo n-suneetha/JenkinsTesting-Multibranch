@@ -6,11 +6,13 @@ pipeline {
                 script {
                     userVar = null
                     passVar = null
-                    withCredentials([conjurSecretCredential(credentialsId: 're-engineering-sub-child-job-credential-1', variable: 'CONJUR_SECRET')]) {
+withCredentials([conjurSecretUsername(credentialsId: 'MultibranchPipelinewithgit-re-engineering-sub-child-job-credential-1', passwordVariable: 'CONJUR_SECRET', usernameVariable: 'USERNAME')]) {
                                  userVar = CONJUR_SECRET
-                                 echo "Username: CONJUR_SECRET"
+                                 passVar = USERNAME
                     }
                     echo "Username: ${userVar}"
+                    echo "Password: ${passVar}"
+
                 }
             }
         }
