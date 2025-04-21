@@ -6,7 +6,7 @@ pipeline {
                 script {
                     userVar = null
                     passVar = null
-withCredentials([conjurSecretUsername(credentialsId: 'MultibranchPipelinewithgit-re-engineering-sub-child-job-credential-1', passwordVariable: 'CONJUR_SECRET', usernameVariable: 'USERNAME')]) {
+withCredentials([conjurSecretUsername(credentialsId: 'MultibranchUsernameCredentialTestingwithParentCredential-re-engineering-child-job-credential-1', passwordVariable: 'CONJUR_SECRET', usernameVariable: 'USERNAME')]) {
                                  userVar = CONJUR_SECRET
                                  passVar = USERNAME
                     }
