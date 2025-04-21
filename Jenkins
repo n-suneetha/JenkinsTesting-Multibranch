@@ -6,7 +6,7 @@ pipeline {
                 script {
                     userVar = null
                     passVar = null
-                    withCredentials([conjurSecretCredential(credentialsId: 're-engineering-sub-child-job-credential-1', variable: 'CONJUR_SECRET')]) {
+                    withCredentials([conjurSecretCredential(credentialsId: 're-engineering-child-job-credential-1', variable: 'CONJUR_SECRET')]) {
                                  userVar = CONJUR_SECRET
                                  echo "Username: CONJUR_SECRET"
                     }
